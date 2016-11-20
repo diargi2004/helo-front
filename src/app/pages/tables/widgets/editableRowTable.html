@@ -3,13 +3,25 @@
 </div>
 <table class="table table-bordered table-hover table-condensed">
   <tr>
-    <td></td>
-    <td>Name</td>
-    <td>Status</td>
-    <td>Group</td>
-    <td>Actions</td>
+    <th>Día</th>
+    <th>Hora inicio</th>
+    <th>Hora fin</th>
+    <th>Frecuencia</th>
+    <th></th>
+    <th></th>
   </tr>
-  <tr ng-repeat="user in users" class="editable-row">
+  <tr ng-repeat="id in prog_ids">
+    <td>{{prog_dias[$index]}}</td>
+    <td>{{prog_hinis[$index]}}</td>
+    <td>{{prog_hfins[$index]}}</td>
+    <td ng-if="prog_frecs[$index]==1">Única</td>
+    <td ng-if="prog_frecs[$index]==2">Diaria</td>
+    <td ng-if="prog_frecs[$index]==3">Semanal</td>
+    <td ng-if="prog_frecs[$index]==4">Mensual</td>
+    <td><img class="img-icon-list" ng-src="{{::( 'icono_edit.png' | appImage )}}" ng-click="edit_programacion(prog_ids[$index],prog_dias[$index],prog_hinis[$index],prog_hfins[$index],prog_frecs[$index])"></td>
+    <td><img class="img-icon-list" ng-src="{{::( 'icono_delete.png' | appImage )}}" ng-click="delete_programacion(prog_ids[$index])"></td>
+  </tr>  
+  <!-- <tr ng-repeat="user in users" class="editable-row">
     <td>
         {{$index}}
     </td>
@@ -45,5 +57,5 @@
         <button class="btn btn-danger editable-table-button btn-xs" ng-click="removeUser($index)">Delete</button>
       </div>
     </td>
-  </tr>
+  </tr> -->
 </table>

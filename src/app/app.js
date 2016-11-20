@@ -1,6 +1,8 @@
 'use strict';
 
 angular.module('BlurAdmin', [
+  'ngStorage',
+  'ngDialog',
   'ngAnimate',
   'ui.bootstrap',
   'ui.sortable',

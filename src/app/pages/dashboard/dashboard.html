@@ -1,63 +1,37 @@
-<dashboard-pie-chart></dashboard-pie-chart>
+<ba-sidebar></ba-sidebar>
+<page-top></page-top>
 
-<div class="row">
-  <div class="col-lg-6 col-md-12 col-sm-12"
-       ba-panel
-       ba-panel-title="Acquisition Channels"
-       ba-panel-class="medium-panel traffic-panel">
-    <traffic-chart></traffic-chart>
-  </div>
-  <div class="col-lg-6 col-md-12 col-sm-12"
-       ba-panel
-       ba-panel-title="Users by Country"
-       ba-panel-class="medium-panel">
-    <dashboard-map></dashboard-map>
-  </div>
-</div>
-
-<div class="row">
-  <div class="col-xlg-9 col-lg-6 col-md-6 col-sm-12 col-xs-12">
-    <div class="row">
-      <div class="col-xlg-8 col-lg-12 col-md-12 col-sm-7 col-xs-12"
-           ba-panel
-           ba-panel-title="Revenue"
-           ba-panel-class="medium-panel">
-        <dashboard-line-chart></dashboard-line-chart>
+<div class="al-main">
+  <div class="al-content">
+    <content-top></content-top>
+    <div class="dinamic_content">
+      <div class="row">
+        <div class="col-md-12">
+          <div ba-panel ba-panel-title="Editable Rows" ba-panel-class="with-scroll">
+            <div include-with-scope="app/pages/tables/widgets/editableRowTable.html"></div>
+          </div>
+        </div>
       </div>
-      <div class="col-xlg-4 col-lg-12 col-md-12 col-sm-5 col-xs-12"
-           ba-panel
-           ba-panel-class="popular-app medium-panel">
-        <popular-app></popular-app>
+
+      <div class="holder_prog_zonas">
+        <p class="tag_title">Zonas</p>
+        <div class="holder_tabla_zonas">
+          <table class="info_zonas">
+            <tr ng-repeat="nombre in nombres">
+              <td>{{nombre}}</td>
+              <td><img ng-src="{{::( 'icono_calendar.png' | appImage )}}" ng-click="list_programacion(ids[$index])"></td>
+              <td><img class="img-icon" ng-src="{{::( 'icon_add.png' | appImage )}}" ng-click="add_programacion(ids[$index])"></td>
+            </tr> 
+          </table>
+        </div>
       </div>
+
+      <button type="button" class="btn btn-primary" ng-click="pedir()"></button>
     </div>
-  </div>
-  <div class="col-xlg-3 col-lg-6 col-md-6 col-sm-12 col-xs-12"
-       ba-panel
-       ba-panel-title="Feed"
-       ba-panel-class="large-panel with-scroll feed-panel">
-    <blur-feed></blur-feed>
+    
   </div>
 </div>
 
-<div class="row shift-up">
-  <div class="col-xlg-3 col-lg-6 col-md-6 col-xs-12"
-       ba-panel
-       ba-panel-title="To Do List"
-       ba-panel-class="xmedium-panel feed-comply-panel with-scroll todo-panel">
-    <dashboard-todo></dashboard-todo>
-  </div>
-  <div class="col-xlg-6 col-lg-6 col-md-6 col-xs-12"
-       ba-panel
-       ba-panel-title="Calendar"
-       ba-panel-class="xmedium-panel feed-comply-panel with-scroll calendar-panel">
-    <dashboard-calendar></dashboard-calendar>
-  </div>
-</div>
-
-<!--<div class="row">
-  <div class="col-lg-4 col-sm-6 col-xs-12">
-    <div ba-panel ba-panel-title="Weather" ba-panel-class="medium-panel with-scroll">
-      <blur-weather forecast="5"></blur-weather>
-    </div>
-  </div>
-</div>-->
+<footer class="al-footer clearfix">
+  <div class="al-footer-right">Creado con <i class="ion-heart"></i> en Medellín por <a href="http://intelmotics.com/" target="_blank">Ⓒ Intelmotics.</a> 2016.</div>
+</footer>

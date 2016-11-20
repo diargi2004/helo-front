@@ -1,0 +1,13 @@
+<section class="login">
+  <div class= "form">
+    <img class="logo" ng-src="{{::( 'helo_logo.png' | appImage )}}"/>
+
+    <input class="nombre" type="text" ng-model="nombre" placeholder="Nombre(s)" required />
+    <input class="apellido" type="text" ng-model="apellido" placeholder="Apellido(s)" required />
+    <input class="correo" type="email" ng-model="correo" placeholder="Correo" required />
+    <input class="correo" type="number" ng-model="celular" placeholder="Celular" required />
+    <input class="empresa" type="text" ng-model="empresa" placeholder="Empresa" required />
+    <button class="submit" ng-click="login(usuario,contrasena)">Regístrate</button>
+    <div class="cambiar_sign"><a href="#/sign_in">Iniciar sesión</a></div>
+  </div>
+</section>

@@ -1,0 +1,10 @@
+<section class="login">
+  <div class= "form">
+    <img class="logo" ng-src="{{::( 'helo_logo.png' | appImage )}}"/>
+
+    <input class="usuario" type="text" ng-model="usuario" placeholder="Usuario" required />
+    <input class="contrasena" type="password" ng-model="contrasena" placeholder="Contraseña" required />
+    <button class="submit" ng-click="login(usuario,contrasena)">Iniciar sesión</button>
+    <div class="cambiar_sign"><a href="#/sign_up">Regístrate</a></div>
+  </div>
+</section>
